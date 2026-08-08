@@ -1,47 +1,48 @@
-# Simple Chat (Twitch & Kick)
+# 💬 ChatSimple
 
-Una aplicación de escritorio minimalista y unificada para leer y moderar los chats de Twitch y Kick simultáneamente. Creada con Flutter, pensada para ser rápida, personalizable (soporta 7TV) y no consumir apenas recursos.
+**ChatSimple** es una aplicación de escritorio rápida, elegante y liviana diseñada para streamers y creadores de contenido. Te permite **leer, gestionar y moderar en tiempo real** el chat de múltiples plataformas de streaming en una sola ventana sin consumir recursos de tu PC.
 
-## Características
+---
 
-- **Chat Unificado**: Lee mensajes de Twitch y Kick en una sola columna o pestaña separada.
-- **Soporte de Emotes (7TV)**: Integra automáticamente los emotes globales y de canal (Twitch & Kick) a través de la API de 7TV.
-- **Acciones de Moderación Oficiales**:
-  - **Twitch**: Ban, timeout y borrado de mensajes utilizando la API oficial de Helix.
-  - **Kick**: Ban, timeout y borrado de mensajes integrados usando la API Pública V1 oficial de Kick.
-- **Panel de Viewers Activos**: Contadores independientes para Twitch y Kick con una lista de usuarios actualmente hablando en el chat.
-- **Transparencia y Always-On-Top**: Ventana minimalista ideal para tener superpuesta en tu pantalla mientras haces streaming o juegas, con soporte "pin" (fijar) para que siempre esté encima de otras ventanas.
+## 🌟 Plataformas Soportadas
 
-## Uso y Ejecutables
+- 💜 **Twitch**: Chat, moderación oficial, predicciones en vivo, Hype Train y badges.
+- 💚 **Kick**: Chat unificado y acciones de moderación (ban, timeout, borrado).
+- ❤️ **YouTube**: Lectura de chat en directo.
+- 🖤 **TikTok**: Lectura de chat de tus transmisiones en vivo.
 
-Para usar la aplicación, simplemente extrae la carpeta del ejecutable `Release` (que contiene `chat_simple.exe` y la carpeta `data`).
+---
 
-Tus credenciales y configuraciones se guardan **localmente en tu PC** (mediante *SharedPreferences* de Windows). Si mueves la carpeta o la pasas a otra persona, la aplicación se abrirá "limpia" y le pedirá a esa persona configurar sus propios canales y hacer sus propios logins en Ajustes. 
+## 🚀 Características Destacadas
 
-**Tus datos no viajan con el ejecutable.**
+- 📬 **Chat Unificado**: Todos los mensajes de tus plataformas se combinan en una sola lista clara, diferenciados por iconos y colores distintivos de cada plataforma.
+- 🔮 **Predicciones y Hype Train**: Visualiza en tiempo real las predicciones activas de Twitch con barra de progreso, porcentajes y temporizador, además de alertas de Hype Train.
+- 😃 **Emotes de 7TV**: Soporte automático para emotes nativos de Twitch, YouTube y la biblioteca de **7TV** (canal y globales). Incluye un botón para activarlos o desactivarlos cuando prefieras.
+- 🏷️ **Menciones Inteligentes (@usuario)**: Escribe `@` para autocompletar nombres de espectadores con sugerencias rápidas por teclado y resaltado visual premium.
+- 📌 **Modo Siempre Arriba (Always-on-Top)**: Fija la ventana flotante sobre tu juego o software de streaming para no perderte ningún mensaje mientras transmites.
+- 🛠️ **Herramientas de Moderación**: Borra mensajes, pon usuarios en *timeout* o *ban*, y fija mensajes importantes en la parte superior del chat.
+- 👥 **Espectadores Activos**: Panel en vivo para ver quiénes están interactuando activamente en tu chat por plataforma.
+- 🔄 **Actualizaciones Automáticas**: La app detecta automáticamente cuando hay una versión más nueva disponible y te avisa para actualizar con un solo clic.
 
-### Configuración de Desarrollador (Si vas a compilar tú mismo)
+---
 
-El código fuente necesita un archivo de entorno (`.env`) en la raíz del proyecto (junto a `pubspec.yaml`) para que la app tenga las credenciales globales con las que conectarse a las APIs.
+## 📺 Integración con OBS Studio
 
-Debes crear el archivo `.env` tomando como base `.env.example`:
+ChatSimple se integra de forma transparente con **OBS Studio** mediante un servidor local ultrarrápido:
 
-```env
-TWITCH_CLIENT_ID="tu_twitch_client_id"
-KICK_CLIENT_ID="tu_kick_client_id"
-KICK_CLIENT_SECRET="tu_kick_client_secret"
-```
+1. **Custom Browser Dock (Panel de OBS)**:
+   - Añade un dock interactivo dentro de OBS Studio (*Vista > Docks > Docks de navegador personalizados*).
+   - Te permite leer el chat, responder a cualquier plataforma y moderar sin salir de OBS.
+2. **Browser Source (Superposición para el Stream)**:
+   - Añade el chat como fuente de navegador en tu escena de OBS para que tus espectadores lo vean en el directo con emotes y diseño limpio.
 
-Los *tokens de acceso de usuario* (para leer o escribir como moderador) no van en el `.env`. El usuario final los obtiene haciendo login directamente en la UI de Ajustes de la app.
+---
 
-## Compilación
+## ⚙️ Primeros Pasos (Uso Sencillo)
 
-Para construir tu propio ejecutable de producción para Windows:
+1. **Descargar**: Descomprime la carpeta de la aplicación y ejecuta `ChatSimple.exe`.
+2. **Conectar Canales**: Haz clic en el botón de **Ajustes** (⚙️) arriba a la derecha.
+3. **Iniciar Sesión**: Conecta tu cuenta de Twitch o Kick, e introduce tus nombres de usuario para YouTube o TikTok.
+4. **¡Listo!**: La aplicación se conectará automáticamente a todos tus chats.
 
-```bash
-flutter clean
-flutter pub get
-flutter build windows
-```
-
-El resultado aparecerá en `build/windows/x64/runner/Release`. Copia el contenido entero de esa carpeta donde quieras ejecutarlo.
+> 🔒 **Privacidad Garantizada**: Todas tus credenciales y preferencias se guardan de forma 100% local y segura en tu propia computadora. Nunca enviamos tus datos a servidores externos.
