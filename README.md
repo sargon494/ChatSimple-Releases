@@ -1,48 +1,66 @@
-# 💬 ChatSimple
+# ChatSimple
 
-**ChatSimple** es una aplicación de escritorio rápida, elegante y liviana diseñada para streamers y creadores de contenido. Te permite **leer, gestionar y moderar en tiempo real** el chat de múltiples plataformas de streaming en una sola ventana sin consumir recursos de tu PC.
+**ChatSimple** es una aplicación de escritorio ligera para streamers y creadores de contenido. Reúne el chat de Twitch, Kick, YouTube y TikTok en una sola ventana, con moderación integrada e integración directa con OBS Studio.
 
----
+- [Plataformas](#plataformas)
+- [Características](#características)
+- [Instalación](#instalación)
+- [Integración con OBS Studio](#integración-con-obs-studio)
+- [Privacidad](#privacidad)
+- [Limitaciones conocidas](#limitaciones-conocidas)
+- [Contacto](#contacto)
 
-## 🌟 Plataformas Soportadas
+## Plataformas
 
-- 💜 **Twitch**: Chat, moderación oficial, predicciones en vivo, Hype Train y badges.
-- 💚 **Kick**: Chat unificado y acciones de moderación (ban, timeout, borrado).
-- ❤️ **YouTube**: Lectura de chat en directo.
-- 🖤 **TikTok**: Lectura de chat de tus transmisiones en vivo.
+| Plataforma | Lectura del chat | Moderación | Notas |
+|---|:---:|:---:|---|
+| Twitch | ✅ | ✅ | Predicciones, Hype Train, badges, modos de chat |
+| Kick | ✅ | ✅ | Ban, timeout y borrado de mensajes. Sin modos de chat (la API no lo permite) |
+| YouTube | ✅ | ✅ | Requiere inicio de sesión con Google para moderar |
+| TikTok | ✅ | — | Lectura del chat de tus directos |
 
----
+## Características
 
-## 🚀 Características Destacadas
+- **Chat unificado.** Todos los mensajes se combinan en una lista, diferenciados por plataforma.
+- **Moderación.** Borrar mensajes, poner en *timeout* o banear, y desbanear. También puedes usar el comando `/unban @usuario` desde el chat.
+- **Modos de chat de Twitch.** Modo lento, solo seguidores, solo suscriptores y solo emotes, desde la ventana o desde el dock de OBS.
+- **Predicciones y Hype Train de Twitch.** Progreso, porcentajes y temporizador en tiempo real.
+- **Emotes.** Soporte para emotes de Twitch, YouTube y 7TV (canal y globales), con opción de activarlos o desactivarlos.
+- **Menciones.** Escribe `@` para autocompletar nombres de espectadores.
+- **Espectadores activos.** Panel con quién participa en el chat, por plataforma.
+- **Siempre arriba.** Fija la ventana sobre tu juego o software de streaming.
+- **Actualizaciones.** Avisa cuando hay una versión nueva disponible.
 
-- 📬 **Chat Unificado**: Todos los mensajes de tus plataformas se combinan en una sola lista clara, diferenciados por iconos y colores distintivos de cada plataforma.
-- 🔮 **Predicciones y Hype Train**: Visualiza en tiempo real las predicciones activas de Twitch con barra de progreso, porcentajes y temporizador, además de alertas de Hype Train.
-- 😃 **Emotes de 7TV**: Soporte automático para emotes nativos de Twitch, YouTube y la biblioteca de **7TV** (canal y globales). Incluye un botón para activarlos o desactivarlos cuando prefieras.
-- 🏷️ **Menciones Inteligentes (@usuario)**: Escribe `@` para autocompletar nombres de espectadores con sugerencias rápidas por teclado y resaltado visual premium.
-- 📌 **Modo Siempre Arriba (Always-on-Top)**: Fija la ventana flotante sobre tu juego o software de streaming para no perderte ningún mensaje mientras transmites.
-- 🛠️ **Herramientas de Moderación**: Borra mensajes, pon usuarios en *timeout* o *ban*, y fija mensajes importantes en la parte superior del chat.
-- 👥 **Espectadores Activos**: Panel en vivo para ver quiénes están interactuando activamente en tu chat por plataforma.
-- 🔄 **Actualizaciones Automáticas**: La app detecta automáticamente cuando hay una versión más nueva disponible y te avisa para actualizar con un solo clic.
+## Instalación
 
----
+1. Descarga la última versión desde la sección de [releases](https://github.com/sargon494/ChatSimple-Releases/releases).
+2. Descomprime la carpeta.
+3. Ejecuta `ChatSimple.exe`.
+4. Abre **Ajustes** (⚙️), conecta tu cuenta de Twitch o Kick, e introduce tu usuario de YouTube o TikTok.
 
-## 📺 Integración con OBS Studio
+La aplicación se conectará automáticamente a los chats configurados.
 
-ChatSimple se integra de forma transparente con **OBS Studio** mediante un servidor local ultrarrápido:
+## Integración con OBS Studio
 
-1. **Custom Browser Dock (Panel de OBS)**:
-   - Añade un dock interactivo dentro de OBS Studio (*Vista > Docks > Docks de navegador personalizados*).
-   - Te permite leer el chat, responder a cualquier plataforma y moderar sin salir de OBS.
-2. **Browser Source (Superposición para el Stream)**:
-   - Añade el chat como fuente de navegador en tu escena de OBS para que tus espectadores lo vean en el directo con emotes y diseño limpio.
+ChatSimple se integra con OBS mediante un servidor local:
 
----
+1. **Dock de OBS.** En *Vista → Docks → Docks de navegador personalizados*, añade la URL del dock. Desde ahí puedes leer el chat, responder y moderar sin salir de OBS.
+2. **Fuente de navegador.** Añade la URL del overlay como fuente de navegador en tu escena para mostrar el chat en el directo.
 
-## ⚙️ Primeros Pasos (Uso Sencillo)
+Ambos funcionan en tu equipo, en `localhost`.
 
-1. **Descargar**: Descomprime la carpeta de la aplicación y ejecuta `ChatSimple.exe`.
-2. **Conectar Canales**: Haz clic en el botón de **Ajustes** (⚙️) arriba a la derecha.
-3. **Iniciar Sesión**: Conecta tu cuenta de Twitch o Kick, e introduce tus nombres de usuario para YouTube o TikTok.
-4. **¡Listo!**: La aplicación se conectará automáticamente a todos tus chats.
+## Privacidad
 
-> 🔒 **Privacidad Garantizada**: Todas tus credenciales y preferencias se guardan de forma 100% local y segura en tu propia computadora. Nunca enviamos tus datos a servidores externos.
+ChatSimple no tiene servidores propios que guarden tus datos. Los tokens se guardan en tu dispositivo, y la aplicación se comunica directamente con las plataformas que usas.
+
+La información completa sobre qué datos se tratan, dónde se guardan y con qué servicios se comunica la aplicación está en **[docs/PRIVACY.md](docs/PRIVACY.md)**.
+
+## Limitaciones conocidas
+
+- **YouTube:** solo puedes desbanear a usuarios que hayas baneado desde la aplicación en el directo actual, porque la API de YouTube no permite listar los baneos. Los modos de chat no están disponibles en la API.
+- **TikTok:** la conexión depende de un servicio de terceros (EulerStream) o del relay local, y puede dejar de funcionar si TikTok cambia su API.
+- **Kick:** no hay API para cambiar los modos de chat.
+
+## Contacto
+
+**Sargon494**: hbosxojhi@mozmail.com
